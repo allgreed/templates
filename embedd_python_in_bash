@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+read -r -d '' ARG0_PY << '--END'
+import sys
+
+stdin = sys.stdin.read()
+args = sys.argv
+
+print("ble")
+--END
+python3 -c "$ARG0_PY"
