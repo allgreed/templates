@@ -1,10 +1,10 @@
 let
   nixpkgs = builtins.fetchGit {
-    name = "nixos-unstable-2020-09-26";
-    url = "https://github.com/nixos/nixpkgs-channels/";
+    name = "nixos-unstable-2021-03-17";
+    url = "https://github.com/nixos/nixpkgs/";
     ref = "refs/heads/nixos-unstable";
-    rev = "daaa0e33505082716beb52efefe3064f0332b521";
-    # obtain via `git ls-remote https://github.com/nixos/nixpkgs-channels nixos-unstable`
+    rev = "266dc8c3d052f549826ba246d06787a219533b8f";
+    # obtain via `git ls-remote https://github.com/nixos/nixpkgs nixos-unstable`
   };
   pkgs = import nixpkgs { config = {}; };
 in
