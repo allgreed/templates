@@ -41,10 +41,6 @@ gitclean:
 gitclean-with-libs:
 	diff --new-line-format="" --unchanged-line-format="" <(grep -v '^#' .gitignore | grep '\S' | sort) | xargs rm -rf
 
-# Helpers
-# ###############
-.PHONY:
-
 # Utilities
 # ###############
 .PHONY: help todo clean really_clean init
