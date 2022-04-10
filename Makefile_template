@@ -1,8 +1,14 @@
-
+SOURCES := main.py
+INPUTS :=
+# but really SOURCES + INPUTS
+ENTRYPOIN_DEPS := $(SOURCES)
 
 # Porcelain
 # ###############
-.PHONY: env-up env-down env-recreate container run build lint test
+.PHONY: env-up env-down env-recreate container run build lint test watch
+
+watch:
+	ls $(INPUTS) | entr -c make --no-print-directory run
 
 run: setup ## run the app
 	@echo "Not implemented"; false
@@ -33,9 +39,9 @@ container: build ## create container
 .PHONY: setup gitclean gitclean-with-libs
 
 setup:
-
 gitclean:
 	@# will remove everything in .gitignore expect for blocks starting with dep* or lib* comment
+
 	diff --new-line-format="" --unchanged-line-format="" <(grep -v '^#' .gitignore | grep '\S' | sort) <(awk '/^# *(dep|lib)/,/^$/' testowy | head -n -1 | tail -n +2 | sort) | xargs rm -rf
 
 gitclean-with-libs:
