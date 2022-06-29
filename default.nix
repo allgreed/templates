@@ -6,6 +6,10 @@ let
     # obtain via `git ls-remote https://github.com/nixos/nixpkgs nixos-unstable`
   };
   pkgs = import nixpkgs { config = {}; };
+  pythonPkgs = python-packages: with python-packages; [
+    ];
+  pythonCore = pkgs.python39;
+  myPython = pythonCore.withPackages pythonPkgs;
 in
 pkgs.mkShell {
   buildInputs =
@@ -13,5 +17,6 @@ pkgs.mkShell {
   [
     git
     gnumake
+    #myPython
   ];
 }
