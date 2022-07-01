@@ -7,7 +7,7 @@ let
   };
   pkgs = import nixpkgs { config = {}; };
   pythonPkgs = python-packages: with python-packages; [
-    ];
+  ];
   pythonCore = pkgs.python39;
   myPython = pythonCore.withPackages pythonPkgs;
 in
