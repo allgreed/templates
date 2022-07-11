@@ -7,7 +7,7 @@ For now go for [dev](#dev)
 ## Dev
 
 ### Prerequisites
-- [nix](https://nixos.org/nix/manual/#chap-installation)
+- [nix](https://nixos.org/download.html)
 - `direnv` (`nix-env -iA nixpkgs.direnv`)
 - [configured direnv shell hook ](https://direnv.net/docs/hook.html)
 - some form of `make` (`nix-env -iA nixpkgs.gnumake`)
