@@ -1,3 +1,4 @@
+.POSIX:
 SOURCES := main.py
 INPUTS :=
 # but really SOURCES + INPUTS
