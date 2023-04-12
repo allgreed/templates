@@ -2,7 +2,7 @@ let
   pkgs = import (builtins.fetchGit {
     url = "https://github.com/nixos/nixpkgs/";
     ref = "refs/heads/nixos-unstable";
-    rev = "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5"; # 27-06-2022
+    rev = "3fb8eedc450286d5092e4953118212fa21091b3b"; # 12-04-2022
     # obtain via `git ls-remote https://github.com/nixos/nixpkgs nixos-unstable`
   }) { config = {}; };
   pythonPkgs = python-packages: with python-packages; [
