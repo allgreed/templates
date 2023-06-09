@@ -8,7 +8,7 @@ let
   pythonPkgs = python-packages: with python-packages; [
     ptpython # nicer repl
   ];
-  pythonCore = pkgs.python39;
+  pythonCore = pkgs.python310;
   myPython = pythonCore.withPackages pythonPkgs;
 in
 pkgs.mkShell {
