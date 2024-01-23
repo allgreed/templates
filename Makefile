@@ -1,5 +1,5 @@
 .POSIX:
-SOURCES := main.py
+SOURCES := main.py default.nix
 INPUTS :=
 ENTRYPOINT_DEPS := $(SOURCES) $(INPUTS)
 
