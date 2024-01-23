@@ -1,7 +1,7 @@
 
 
 ### DEMARCATION LINE ###
-# something missing? like .idea? or .swp?
-# DON'T
+# something missing? like .idea? or .swp? or .DS_STORE
+# DON'T YOU DARE
 # use global gitignore:
 # https://sebastiandedeyne.com/setting-up-a-global-gitignore-file/

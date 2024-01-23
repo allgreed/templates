@@ -18,5 +18,6 @@ pkgs.mkShell {
     git
     gnumake
     #myPython
+    #pyright
   ];
 }
