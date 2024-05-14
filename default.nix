@@ -11,13 +11,14 @@ let
   pythonCore = pkgs.python310;
   myPython = pythonCore.withPackages pythonPkgs;
 in
-pkgs.mkShellNoCC {
-  buildInputs =
-  with pkgs;
-  [
-    git
-    gnumake
-    #myPython
-    #pyright
-  ];
+{
+  app = pkgs.mkShellNoCC {
+    buildInputs = with pkgs; [
+      git
+      gnumake
+      #myPython
+      #pyright
+      #podman?
+    ];
+  };
 }
