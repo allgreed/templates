@@ -11,7 +11,7 @@ watch:
 	ls $(ENTRYPOINT_DEPS) | entr -c make --no-print-directory run
 
 run: setup ## run the app
-	@echo "Not implemented"; false
+	python main.py
 
 env-up: ## set up dev environment
 	@echo "Not implemented"; false
