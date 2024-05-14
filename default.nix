@@ -15,7 +15,7 @@ let
   pythonCore = pkgs.python310;
   devDeps = p: with p; [
     ptpython # nicer repl
-    pytset
+    pytest
   ];
   appDeps = p: with p; [
     # TODO: deps go here
