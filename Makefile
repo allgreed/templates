@@ -22,7 +22,7 @@ env-down: ## tear down dev environment
 env-recreate: env-down env-up ## deconstruct current env and create another one
 
 build: setup ## create artifact
-	@echo "Not implemented"; false
+	nix-build -A artifacts.app
 
 lint: setup ## run static analysis
 	@echo "Not implemented"; false
@@ -30,18 +30,18 @@ lint: setup ## run static analysis
 test: setup ## run all tests
 	@echo "Not implemented"; false
 
-container: build ## create container
-	#docker build -t lmap .
-	@echo "Not implemented"; false
+container: ## create container
+	nix-build -A artifacts.container
+	podman load < result
 
 # Plumbing
 # ###############
 .PHONY: setup gitclean gitclean-with-libs
 
+# this is a hook and likely will not be needed
 setup:
 gitclean:
 	@# will remove everything in .gitignore expect for blocks starting with dep* or lib* comment
-
 	diff --new-line-format="" --unchanged-line-format="" <(grep -v '^#' .gitignore | grep '\S' | sort) <(awk '/^# *(dep|lib)/,/^$/' testowy | head -n -1 | tail -n +2 | sort) | xargs rm -rf
 
 gitclean-with-libs:
@@ -52,9 +52,6 @@ gitclean-with-libs:
 .PHONY: help todo clean really_clean init
 init: ## one time setup
 	direnv allow .
-
-todo: ## list all TODOs in the project
-	git grep -I --line-number TODO | grep -v 'list all TODOs in the project' | grep TODO
 
 clean: gitclean ## remove artifacts
 
