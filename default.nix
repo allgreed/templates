@@ -43,7 +43,7 @@ rec {
       contents = [ appPython app ];
 
       config = {
-        Cmd = [
+        Entrypoint = [
           "${app}/bin/main.py"
         ];
       };
