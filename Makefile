@@ -30,7 +30,7 @@ lint: setup ## run static analysis
 test: setup ## run all tests
 	@echo "Not implemented"; false
 
-container: ## create container
+container: ## create (and load) container image
 	nix-build -A artifacts.container
 	podman load < result
 
