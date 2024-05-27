@@ -53,8 +53,12 @@ rec {
     buildInputs = with pkgs; [
       git
       gnumake
+
       devPython
       pyright
+      ruff
+      ruff-lsp
+
       podman
     ];
   };
