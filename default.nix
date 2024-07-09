@@ -12,7 +12,7 @@ let
   devPython = pythonCore.withPackages pythonDevPkgs;
   appPython = pythonCore.withPackages pythonAppPkgs;
 
-  pythonCore = pkgs.python310;
+  pythonCore = pkgs.python311;
   devDeps = p: with p; [
     ptpython # nicer repl
     pytest
